@@ -3,16 +3,16 @@ const colorGame = {
   colors: [],
   difficultyButtons: document.getElementsByClassName('difficulty'),
   goalColor: '',
+  goalDisplay: document.getElementById('goalDisplay'),
   h1: document.getElementsByTagName('h1')[0],
   messageDisplay: document.getElementById('message'),
-  resetButton: document.getElementById('reset'),
   points: 6,
   pointsSpan: document.getElementById('points'),
+  resetButton: document.getElementById('reset'),
   round: 1,
   roundSpan: document.getElementById('round'),
   squareCount: 6,
   squares: document.getElementsByClassName('square'),
-  targetColor: document.getElementById('targetColor'),
   total: 0,
   totalSpan: document.getElementById('total'),
   win: false,
@@ -54,7 +54,7 @@ const pickWinner = function pickWinner() {
 // Helper function to reset the header and settings bar
 const resetDisplay = function resetDisplay() {
   colorGame.h1.style.backgroundColor = 'steelblue';
-  colorGame.targetColor.textContent = colorGame.goalColor;
+  colorGame.goalDisplay.textContent = colorGame.goalColor;
   colorGame.resetButton.textContent = 'Reset';
   colorGame.messageDisplay.textContent = '';
 };
@@ -95,7 +95,7 @@ const updateScore = function updateScore() {
   colorGame.totalSpan.textContent = `Total Score: ${colorGame.total}`;
 };
 
-// Helper function to initialize game:
+// Helper function to initialize game
 const resetGame = function resetGame() {
   // Generate new array of random colors
   colorGame.colors = generateRandomColors(colorGame.squareCount);
@@ -119,7 +119,7 @@ colorGame.resetButton.addEventListener('click', resetGame);
 for (let i = 0; i < colorGame.squares.length; i += 1) {
   colorGame.squares[i].addEventListener('click', () => {
     // Grab color of user selected square
-    let selectedColor = colorGame.squares[i].style.backgroundColor;
+    const selectedColor = colorGame.squares[i].style.backgroundColor;
     // Compare user selected color to goal color
     if (selectedColor === colorGame.goalColor) {
       // Correct user case logic

@@ -4,6 +4,7 @@ body {
   margin: 0;
 }
 
+/* Setting buttons blend into Setting Bar */
 button {
   background: none;
   border: none;
@@ -24,6 +25,7 @@ button:hover {
   color: white;
 }
 
+/* H1 takes up entire header section, font-size adjusts based on screen size */
 h1 {
   background: steelblue;
   color: white;
@@ -31,17 +33,24 @@ h1 {
   font-weight: normal;
   line-height: 1.1;
   margin: 0;
-  padding: 3% 0;
+  padding: 2.5% 0;
   text-align: center;
   text-transform: uppercase;
   transition: background-color 0.3s;
 }
 
+.difficultyContainer {
+  display: inline-block;
+  width: 280px;
+}
+
+/* Selected difficulty level blends into header with same background/color */
 .selected {
   background: steelblue;
   color: white;
 }
 
+/* Score indicators blend into Score Bar */
 .score {
   color: white;
   display: inline-block;
@@ -53,6 +62,21 @@ h1 {
   min-width: 160px;
   text-transform: uppercase;
   width: 25%;
+}
+
+.scoreBar {
+  background: steelblue;
+  bottom: 0;
+  min-height: 30px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+.settingBar {
+  background: white;
+  min-height: 30px;
+  text-align: center;
 }
 
 .square {
@@ -70,9 +94,8 @@ h1 {
   overflow: auto;
 }
 
-#difficultyBar {
-  display: inline-block;
-  width: 280px;
+#goalDisplay {
+  font-size: 7.0vw;
 }
 
 #message {
@@ -84,23 +107,4 @@ h1 {
 #reset {
   margin: 0px 75px;
   width: 130px;
-}
-
-#scoreStripe {
-  background: steelblue;
-  bottom: 0;
-  min-height: 30px;
-  position: fixed;
-  text-align: center;
-  width: 100%;
-}
-
-#settingStripe {
-  background: white;
-  min-height: 30px;
-  text-align: center;
-}
-
-#targetColor {
-  font-size: 7.5vw;
 }
