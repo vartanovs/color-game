@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="color-game.css" rel="stylesheet"/>
+    <title>Color Game</title>
+  </head>
+
+  <body>
+    <h1>The Great<br>
+      <span id="targetColor">RGB</span><br>
+      Color Game</h1>
+
+    <div id="settingStripe">
+      <button id="reset">Reset</button>
+      <span id="message"></span>
+      <div id="difficultyBar">
+        <button class="difficulty" value=3>Easy</button>
+        <button class="difficulty selected" value=6>Medium</button>
+        <button class="difficulty" value=9>Hard</button>
+      </div>
+    </div>
+
+    <div id="container">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+
+    <div id="scoreStripe">
+      <span class="score" id="round">Round: 1</span>
+      <span class="score" id="points">Points: 6</span>
+      <span class="score" id="total">Total Score: 0</span>
+    </div>
+
+    <script src="color-game.js"></script>
+  </body>
+
+</html>
